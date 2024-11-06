@@ -41,7 +41,7 @@ Ikuti langkah-langkah berikut untuk mengkloning dan menjalankan proyek ini secar
 
 4. **Konfigurasi file .env**:
 
-    - Atur koneksi database di `.env`, misalnya:
+    - Atur koneksi database di `.env`:
         ```env
         DB_CONNECTION=mysql
         DB_HOST=127.0.0.1
@@ -57,11 +57,15 @@ Ikuti langkah-langkah berikut untuk mengkloning dan menjalankan proyek ini secar
     php artisan key:generate
     ```
 
-6. **Jalankan migrasi dan seeders** (jika ada):
+6. **Jalankan migrasi dan seeders** :
 
     ```bash
     php artisan migrate --seed
     ```
+
+    - User
+      email : superadmin@email.com
+      password : superadmin
 
 7. **Jalankan generate JWT**:
 
