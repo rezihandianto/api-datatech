@@ -14,7 +14,7 @@ class AuthenticationTest extends TestCase
 
     public function test_user_can_register()
     {
-        $response = $this->json('POST', '/api/register', [
+        $response = $this->json('POST', '/api/auth/register', [
             'name' => 'Test User',
             'email' => 'test@example.com',
             'password' => 'password123',
@@ -43,7 +43,7 @@ class AuthenticationTest extends TestCase
             'password' => 'password123',
         ]);
 
-        $response = $this->json('POST', '/api/register', [
+        $response = $this->json('POST', '/api/auth/register', [
             'name' => 'Test User',
             'email' => 'test@example.com',
             'password' => 'password123',
@@ -55,7 +55,7 @@ class AuthenticationTest extends TestCase
             ->assertJsonValidationErrors(['email']);
 
         // Test dengan password yang tidak sesuai
-        $response = $this->postJson('/api/register', [
+        $response = $this->postJson('/api/auth/register', [
             'name' => 'Test User',
             'email' => 'new@example.com',
             'password' => 'password123',
@@ -67,7 +67,7 @@ class AuthenticationTest extends TestCase
             ->assertJsonValidationErrors(['password']);
 
         // Test dengan data yang kosong
-        $response = $this->postJson('/api/register', []);
+        $response = $this->postJson('/api/auth/register', []);
 
         $response->assertStatus(400)
             ->assertJsonValidationErrors(['name', 'email', 'password', 'age']);
@@ -81,7 +81,7 @@ class AuthenticationTest extends TestCase
 
         ]);
 
-        $response = $this->json('POST', '/api/login', [
+        $response = $this->json('POST', '/api/auth/login', [
             'email' => $user->email,
             'password' => 'password123'
         ]);
@@ -97,7 +97,7 @@ class AuthenticationTest extends TestCase
     public function test_login_fails_with_invalid_credentials()
     {
         // Test dengan email yang tidak terdaftar
-        $response = $this->json('POST', '/api/login', [
+        $response = $this->json('POST', '/api/auth/login', [
             'email' => 'nonexistent@example.com',
             'password' => 'password123'
         ]);
@@ -113,7 +113,7 @@ class AuthenticationTest extends TestCase
             'password' => bcrypt('password123'),
         ]);
 
-        $response = $this->postJson('/api/login', [
+        $response = $this->postJson('/api/auth/login', [
             'email' => 'test@example.com',
             'password' => 'wrong_password'
         ]);
@@ -131,7 +131,7 @@ class AuthenticationTest extends TestCase
 
         $response = $this->withHeaders([
             'Authorization' => 'Bearer ' . $token,
-        ])->postJson('/api/logout');
+        ])->postJson('/api/auth/logout');
 
         $response->assertStatus(200)
             ->assertJson([
