@@ -9,6 +9,13 @@ API ini dikembangkan sebagai bagian dari assessment untuk keperluan testing. API
 -   **Validasi** permintaan menggunakan request validation
 -   Dokumentasi tersedia di **Swagger** (lihat link di bawah)
 
+## Default User
+
+Setelah menjalankan migration dan seeder, gunakan kredensial berikut untuk login:
+
+-   Email: superadmin@email.com
+-   Password: superadmin
+
 ## Prasyarat
 
 -   **PHP** 8.0 atau lebih baru
@@ -62,10 +69,6 @@ Ikuti langkah-langkah berikut untuk mengkloning dan menjalankan proyek ini secar
     ```bash
     php artisan migrate --seed
     ```
-
-    - User
-      email : superadmin@email.com
-      password : superadmin
 
 7. **Jalankan generate JWT**:
 
