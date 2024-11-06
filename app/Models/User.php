@@ -13,6 +13,21 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 class User extends Authenticatable implements JWTSubject
 {
     use HasApiTokens, HasFactory, Notifiable;
+    /**
+     * @OA\Schema(
+     *     schema="User",
+     *     type="object",
+     *     title="User",
+     *     @OA\Property(property="id", type="integer", format="int64", example=1),
+     *     @OA\Property(property="name", type="string", example="John Doe"),
+     *     @OA\Property(property="email", type="string", format="email", example="john@example.com"),
+     *     @OA\Property(property="age", type="integer", example=25),
+     *     @OA\Property(property="membership_status", type="boolean", example=true),
+     *     @OA\Property(property="email_verified_at", type="string", format="date-time", nullable=true),
+     *     @OA\Property(property="created_at", type="string", format="date-time"),
+     *     @OA\Property(property="updated_at", type="string", format="date-time")
+     * )
+     */
 
     /**
      * The attributes that are mass assignable.
