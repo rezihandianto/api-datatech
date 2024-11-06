@@ -5,7 +5,7 @@ API ini dikembangkan sebagai bagian dari assessment untuk keperluan testing. API
 ## Fitur Utama
 
 -   **CRUD** Data User, order
--   **Sistem Otentikasi** dengan [JWT/Bearer Token atau metode otentikasi lain yang digunakan]
+-   **Sistem Otentikasi** dengan JWT/Bearer Token
 -   **Validasi** permintaan menggunakan request validation
 -   Dokumentasi tersedia di **Swagger** (lihat link di bawah)
 
@@ -13,8 +13,8 @@ API ini dikembangkan sebagai bagian dari assessment untuk keperluan testing. API
 
 -   **PHP** 8.0 atau lebih baru
 -   **Composer** 2.x
--   **MySQL** atau database lain yang didukung
--   **Laravel** (sesuaikan versi jika perlu)
+-   **MySQL**
+-   **Laravel** 10 ++
 
 ## Cara Clone Repository
 
