@@ -1,6 +1,6 @@
 # API Test Assessment
 
-API ini dikembangkan sebagai bagian dari assessment untuk keperluan testing. API ini menyediakan beberapa endpoint yang berfungsi untuk [deskripsi singkat tentang tujuan API, misalnya CRUD data pengguna, pengelolaan produk, atau sistem persetujuan].
+API ini dikembangkan sebagai bagian dari assessment untuk keperluan testing. API ini menyediakan beberapa endpoint yang berfungsi untuk CRUD data user dan order, beserta dengan autentikasi menggunakan JWT/Bearer Token.
 
 ## Fitur Utama
 
