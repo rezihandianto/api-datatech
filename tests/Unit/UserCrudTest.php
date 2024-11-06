@@ -70,7 +70,7 @@ class UserCrudTest extends TestCase
             ->assertJson([
                 'status' => true,
                 'message' => 'User updated successfully',
-                'user' => [
+                'data' => [
                     'name' => 'Updated Name',
                     'email' => 'updated@example.com'
                 ]

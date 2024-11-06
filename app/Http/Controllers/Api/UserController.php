@@ -101,7 +101,7 @@ class UserController extends Controller
      *             @OA\Property(property="status", type="boolean", example=true),
      *             @OA\Property(property="message", type="string", example="User created successfully"),
      *             @OA\Property(
-     *                 property="user",
+     *                 property="data",
      *                 ref="#/components/schemas/UserResource"
      *             )
      *         )
@@ -154,7 +154,7 @@ class UserController extends Controller
             return response()->json([
                 'status' => true,
                 'message' => 'User created successfully',
-                'user' => new UserResource($user),
+                'data' => new UserResource($user),
             ], 201);
         } catch (\Exception $ex) {
             DB::rollback();
@@ -186,9 +186,8 @@ class UserController extends Controller
      *         response=200,
      *         description="Success",
      *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(property="status", type="boolean", example=true),
-     *             @OA\Property(property="user", ref="#/components/schemas/UserResource")
+     *             type="object",     
+     *             @OA\Property(property="data", type="object", ref="#/components/schemas/UserResource")
      *         )
      *     ),     *     @OA\Response(
      *         response=404,
@@ -266,7 +265,7 @@ class UserController extends Controller
      *             type="object",
      *             @OA\Property(property="status", type="boolean", example=true),
      *             @OA\Property(property="message", type="string", example="User updated successfully"),
-     *             @OA\Property(property="user", ref="#/components/schemas/UserResource")
+     *             @OA\Property(property="data", ref="#/components/schemas/UserResource")
      *         )
      *     ),
      *   @OA\Response(
@@ -333,7 +332,7 @@ class UserController extends Controller
             return response()->json([
                 'status' => true,
                 'message' => 'User updated successfully',
-                'user' => $user,
+                'data' => $user,
             ], 200);
         } catch (\Exception $ex) {
             DB::rollback();
